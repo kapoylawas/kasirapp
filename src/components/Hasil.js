@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Badge, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
+import TotalBayar from "./TotalBayar";
 
 export default class Hasil extends Component {
     render() {
@@ -19,7 +20,7 @@ export default class Hasil extends Component {
                                             <Badge pill variant="success">
                                                 {menuKeranjang.jumlah}
                                             </Badge>
-                                       </h4>
+                                        </h4>
                                     </Col>
                                     <Col>
                                         <h5>{menuKeranjang.product.nama}</h5>
@@ -31,9 +32,11 @@ export default class Hasil extends Component {
                                 </Row>
                             </ListGroup.Item>
                         ))}
-                    
+
                     </ListGroup>
                 }
+
+                <TotalBayar keranjangs={keranjangs} {...this.props} />
             </Col>
         )
     }

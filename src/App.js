@@ -14,8 +14,8 @@ export default class App extends Component {
         <NavbarComponent />
         <main>
           <Switch>
-            <Route path="/" component={Home} exact/>
-            <Route path="/sukses" component={Sukses} exact/>
+            <Route path="/" component={Home} exact />
+            <Route path="/sukses" component={Sukses} exact />
           </Switch>
         </main>
       </BrowserRouter>
