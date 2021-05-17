@@ -24,18 +24,33 @@ export default class TotalBayar extends Component {
         }, 0);
 
         return (
-            <div className="fixed-bottom">
-                <Row>
-                    <Col md={{ span: 3, offset: 9 }} className="px-3">
-                        <h4>Total harga : <strong className="float-right mr-2">Rp. {numberWithCommas(totalBayar)} </strong></h4>
-                        <Button variant="primary" block className="mb-2 mt-4 mr-2" size="lg"
-                        onClick={ () => this.submitTotalBayar(totalBayar) }>
-                            <FontAwesomeIcon icon={faShoppingCart} /><strong>Bayar</strong>
-                        </Button>
-                    </Col>
-                </Row>
+            <>
+                {/* web */}
+                <div className="fixed-bottom d-none d-md-block">
+                    <Row>
+                        <Col md={{ span: 3, offset: 9 }} className="px-3">
+                            <h4>Total harga : <strong className="float-right mr-2">Rp. {numberWithCommas(totalBayar)} </strong></h4>
+                            <Button variant="primary" block className="mb-2 mt-4 mr-2" size="lg"
+                                onClick={() => this.submitTotalBayar(totalBayar)}>
+                                <FontAwesomeIcon icon={faShoppingCart} /><strong>Bayar</strong>
+                            </Button>
+                        </Col>
+                    </Row>
+                </div>
 
-            </div>
+                {/* mobile */}
+                <div className="d-sm-block d-md-none">
+                    <Row>
+                        <Col md={{ span: 3, offset: 9 }} className="px-3">
+                            <h4>Total harga : <strong className="float-right mr-2">Rp. {numberWithCommas(totalBayar)} </strong></h4>
+                            <Button variant="primary" block className="mb-2 mt-4 mr-2" size="lg"
+                                onClick={() => this.submitTotalBayar(totalBayar)}>
+                                <FontAwesomeIcon icon={faShoppingCart} /><strong>Bayar</strong>
+                            </Button>
+                        </Col>
+                    </Row>
+                </div>
+            </>
         )
     }
 }
